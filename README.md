@@ -17,4 +17,6 @@ Command        | Action
 /unsettimer    |  unset timer
 /reminder      |  set reminder
 /unsetreminder |  unset reminder
+/find          |  find meaning
+/define        |  define things
 
