@@ -1,3 +1,6 @@
+from telegram import ParseMode
+
+
 _help_ = '''
 Use to set a timer.
 
@@ -33,7 +36,8 @@ def set(update, context):
         update.message.reply_text('Timer successfully set!')
 
     except (IndexError, ValueError):
-        update.message.reply_text('Usage: /timer <seconds>')
+        update.message.reply_text('*Usage:* /timer <seconds>',
+                                  parse_mode=ParseMode.MARKDOWN)
 
 
 def unset(update, context):

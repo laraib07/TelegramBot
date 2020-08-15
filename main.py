@@ -5,6 +5,8 @@ import modules.init as Init
 import modules.inlinehelp as Help
 import modules.timer as Timer
 import modules.reminder as Reminder
+import modules.dictionary as Dictionary
+import modules.wiki as Wiki
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -34,8 +36,17 @@ command_handler = [dict(command='start',
 
                    dict(command='unsetreminder',
                         callback=Reminder.unset,
-                        pass_chat_data=True)]
+                        pass_chat_data=True),
 
+                   dict(command='find',
+                        callback=Dictionary.find,
+                        pass_args=True,
+                        pass_chat_data=True),
+
+                   dict(command='define',
+                        callback=Wiki.define,
+                        pass_args=True,
+                        pass_chat_data=True)]
 
 def main():
     '''Run bot.'''
